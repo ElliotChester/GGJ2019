@@ -189,7 +189,18 @@ public class PlayerController : MonoBehaviour
         carryingKennel = false;
         Kennel.GetComponent<BoxCollider>().enabled = true;
         Kennel.GetComponentInChildren<SpriteRenderer>().sortingOrder = this.GetComponentInChildren<SpriteRenderer>().sortingOrder;
-        this.transform.position += Vector3.left * 1.1f * -transform.localScale.x;
+
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.position, Vector3.right, out hit, 2f))
+        {
+            Kennel.transform.position += Vector3.right * 1.1f * -transform.localScale.x;
+        }
+        else
+        {
+            this.transform.position += Vector3.left * 1.1f * -transform.localScale.x;
+        }
+
+
         Kennel.GetComponentInChildren<SpriteRenderer>().sprite = droppedKennelSprite;
         Kennel.transform.eulerAngles = new Vector3(Kennel.transform.eulerAngles.x, Kennel.transform.eulerAngles.y, 0);
     }

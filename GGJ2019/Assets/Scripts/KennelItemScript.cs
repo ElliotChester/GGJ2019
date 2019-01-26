@@ -13,6 +13,9 @@ public class KennelItemScript : MonoBehaviour
     public Vector2 lastPosition;
     public Vector2 newPosition;
 
+    public Sprite normalSprite;
+    public Sprite HighlightedSprite;
+
     void Update()
     {
         if (beingHeld)
@@ -43,7 +46,7 @@ public class KennelItemScript : MonoBehaviour
 
     private void RotateWithMovement()
     {
-        float newAngle = Mathf.LerpAngle(this.transform.eulerAngles.z, Mathf.Clamp((lastPosition.x - this.transform.position.x) * 60, -65, 65), 15 * Time.deltaTime);
+        float newAngle = Mathf.LerpAngle(this.transform.eulerAngles.z, Mathf.Clamp((lastPosition.x - this.transform.position.x) * 100, -65, 65), 8 * Time.deltaTime);
 
         this.transform.eulerAngles = new Vector3(0, 0, newAngle);
 

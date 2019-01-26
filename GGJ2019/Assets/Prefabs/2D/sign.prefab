@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8352690223634621522}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.67, y: -2.53, z: 0.013204584}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -53,6 +53,8 @@ MonoBehaviour:
     m_Bits: 1024
   lastPosition: {x: 0, y: 0}
   newPosition: {x: 0, y: 0}
+  normalSprite: {fileID: 21300004, guid: 5cd4d969ed791e540a900e0637f00a06, type: 3}
+  HighlightedSprite: {fileID: 21300004, guid: 83ad0b786f2eb2e458a6dc14368642a3, type: 3}
 --- !u!61 &8352690223634621521
 BoxCollider2D:
   m_ObjectHideFlags: 0
