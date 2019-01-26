@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    
+    float heightOffset;
 
     public float cameraSpeed;
     public float cameraAcceleration;
     // Start is called before the first frame update
     void Start()
     {
-
+        heightOffset = Camera.main.transform.position.y - this.transform.position.y;
     }
 
     // Update is called once per frame
@@ -46,6 +46,8 @@ public class PlayerCamera : MonoBehaviour
         {
             newVelocity.z = Mathf.Lerp(newVelocity.z, 0, cameraAcceleration * Time.deltaTime);
         }
+
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Mathf.Lerp(Camera.main.transform.position.y, this.transform.position.y + heightOffset, 5 * Time.deltaTime), Camera.main.transform.position.z);
 
         RB.velocity = newVelocity;
     }
