@@ -2831,6 +2831,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7618017518108977300}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5556381525537848832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556381525537848828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cfd1415f9c6244e8329c5dc09cefed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: 4
 --- !u!1 &6116892747079295368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6116892747079295368, guid: d98cd0d22c9039041acc900a8e6d4a52,
