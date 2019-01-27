@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4544972140967634572}
   - component: {fileID: 3333548783840112453}
   - component: {fileID: 6260881761234983644}
+  - component: {fileID: 116184472}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -94,6 +95,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &116184472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970519707136394382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca41db2b3d80ae4c801751e6ac61e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9102034053362749314
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +120,7 @@ GameObject:
   - component: {fileID: 3767774641341658136}
   - component: {fileID: 7902677938795407782}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: FadeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
