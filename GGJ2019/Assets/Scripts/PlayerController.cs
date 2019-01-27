@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         if (usingKennelUI)
         {
             this.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -230,9 +231,30 @@ public class PlayerController : MonoBehaviour
         if (item.tag == "Lamp")
         {
             LampFound = true;
+            GameObject[] darkzones = GameObject.FindGameObjectsWithTag("DarkZone");
+            foreach (var darkzone in darkzones)
+            {
+                darkzone.GetComponent<BoxCollider>().isTrigger = true;
+            }
         }
                                                                                                                            
         Attachables.Remove(item);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "DarkZone")
+        {
+            anim.SetBool("Scared", true);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "DarkZone")
+        {
+            anim.SetBool("Scared", false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
