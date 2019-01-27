@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RB.velocity = Vector3.Lerp(RB.velocity, new Vector3(Input.GetAxisRaw("Horizontal") * speed, RB.velocity.y, Input.GetAxisRaw("Vertical") * speed * 1.5f), 15 * Time.deltaTime);
 
-        if (PlayerController.instance.hasParachute && PlayerController.instance.carryingKennel && !IsGrounded() && RB.velocity.y < 0)
+        if (PlayerController.instance.hasParachute && PlayerController.instance.carryingKennel && !IsGrounded() && RB.velocity.y < 0 && Input.GetButton("Jump"))
         {
             RB.useGravity = false;
             float newDownSpeed = Mathf.Lerp(RB.velocity.y, -1, 15 * Time.deltaTime);
