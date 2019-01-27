@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
 
+    public GameObject retrievalBox;
 
     private void Awake()
     {
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             PickupKennelText.enabled = false;
             CheckForInteractables();
             CheckForAttachables();
+            CheckForRetrievalBox();
 
             if (carryingKennel)
             {
@@ -155,6 +157,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void CheckForRetrievalBox()
+    {
+        if (Vector3.Distance(this.transform.position, retrievalBox.transform.position) < 2)
+        {
+            InteractText.enabled = true;
+            if (Input.GetJoystickNames().Length != 0)
+            {
+                InteractText.text = "Retrieve Kennel: X";
+            }
+            else
+            {
+                InteractText.text = "Retrieve Kennel: E";
+            }
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                retrievalBox.GetComponent<RetrievalBox>().Retrieve();
+            }
+        }
+    }
+
     void CheckForInteractables()
     {
         foreach (var item in Interactables)
@@ -204,7 +227,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PickupItem(GameObject item)
+    void PickupItem(GameObject item)
     {
         GameObject newItem = Instantiate(item.GetComponent<WorldItemScript>().UIAlternative, kennelUI.transform.position, Quaternion.identity, kennelUI.transform);
         kennelUI.GetComponent<CollectionControl>().selectableObjects.Add(newItem);
