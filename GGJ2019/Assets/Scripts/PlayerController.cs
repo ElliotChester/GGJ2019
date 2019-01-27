@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> Attachables;
 
     public Text InteractText;
-    public Text KennelText;
+    public Text EnterKennelText;
+    public Text PickupKennelText;
 
     public bool hasParachute;
 
@@ -66,12 +67,25 @@ public class PlayerController : MonoBehaviour
         else
         {
             InteractText.enabled = false;
-            KennelText.enabled = false;
+            EnterKennelText.enabled = false;
+            PickupKennelText.enabled = false;
             CheckForInteractables();
             CheckForAttachables();
 
             if (carryingKennel)
             {
+                if (!InteractText.enabled)
+                {
+                    EnterKennelText.enabled = true;
+                    EnterKennelText.text = "Enter Kennel: Q";
+                }
+
+                if (!PickupKennelText.enabled)
+                {
+                    PickupKennelText.enabled = true;
+                    PickupKennelText.text = "Drop Kennel: F";
+                }
+
                 CarryKennel();
                 if (Input.GetButtonDown("EnterKennel"))
                 {
@@ -87,10 +101,18 @@ public class PlayerController : MonoBehaviour
             {
                 if (KennelIsClose())
                 {
-                    if (!InteractText.enabled)
+                    if (!EnterKennelText.enabled)
                     {
-                        KennelText.enabled = true;
+                        EnterKennelText.enabled = true;
+                        EnterKennelText.text = "Enter Kennel: Q";
                     }
+
+                    if (!PickupKennelText.enabled)
+                    {
+                        PickupKennelText.enabled = true;
+                        PickupKennelText.text = "Pickup Kennel: F";
+                    }
+
                     if (Input.GetButtonDown("EnterKennel"))
                     {
                         EnterKennel();
@@ -112,6 +134,7 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(this.transform.position, item.transform.position) < 2)
             {
                 InteractText.enabled = true;
+                InteractText.text = "Pickup " + item.name + ": E";
 
                 if (Input.GetButtonDown("Interact"))
                 {
@@ -128,6 +151,7 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(this.transform.position, item.transform.position) < 2)
             {
                 InteractText.enabled = true;
+                InteractText.text = "Pickup " + item.name + ": E";
 
                 if (Input.GetButtonDown("Interact"))
                 {
@@ -139,10 +163,23 @@ public class PlayerController : MonoBehaviour
 
     private void PickupItem(GameObject item)
     {
-        Instantiate(item.GetComponent<WorldItemScript>().UIAlternative, kennelUI.transform.position, Quaternion.identity, kennelUI.transform);
-        kennelUI.GetComponent<CollectionControl>().selectableObjects.Add(item);
-        Destroy(item);
+        GameObject newItem = Instantiate(item.GetComponent<WorldItemScript>().UIAlternative, kennelUI.transform.position, Quaternion.identity, kennelUI.transform);
+        kennelUI.GetComponent<CollectionControl>().selectableObjects.Add(newItem);
+
+        if (kennelUI.GetComponent<CollectionControl>().lastSpawnPos == Vector3.zero)
+        {
+            newItem.transform.localPosition = new Vector3(-7.5F, -2.5F, 0);
+            kennelUI.GetComponent<CollectionControl>().lastSpawnPos = kennelUI.GetComponent<CollectionControl>().lastSpawnPos + new Vector3(-7.5F, -2.5F, 0);
+        }
+        else
+        {
+            newItem.transform.localPosition = kennelUI.GetComponent<CollectionControl>().lastSpawnPos + Vector3.right * 1.65f;
+            kennelUI.GetComponent<CollectionControl>().lastSpawnPos = kennelUI.GetComponent<CollectionControl>().lastSpawnPos + Vector3.right * 1.65f;
+        }
+
+        GameObject reference = item;
         Interactables.Remove(item);
+        Destroy(reference);
     }
 
     void CarryKennel()
@@ -172,7 +209,9 @@ public class PlayerController : MonoBehaviour
         MainCamera.SetActive(false);
         usingKennelUI = true;
         kennelUI.SetActive(true);
-        KennelText.enabled = false;
+        PickupKennelText.enabled = false;
+        EnterKennelText.enabled = true;
+        EnterKennelText.text = "Leave Kennel: Q";
     }
 
     void ExitKennel()

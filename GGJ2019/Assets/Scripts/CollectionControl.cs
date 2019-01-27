@@ -16,6 +16,8 @@ public class CollectionControl : MonoBehaviour
 
     public float moveSpeed;
 
+    public Vector3 lastSpawnPos;
+
     void Start()
     {
         sortOrder = selectableObjects;
@@ -24,9 +26,6 @@ public class CollectionControl : MonoBehaviour
     void Update()
     {
         Debug.Log(Input.GetAxisRaw("DPADHorizontal"));
-
-
-
 
         SelectItemWithController();
 
@@ -40,6 +39,7 @@ public class CollectionControl : MonoBehaviour
         {
             if(sortOrder[i] == itemToMove)
             {
+                
                 sortOrder.Add(sortOrder[i]);
                 sortOrder.RemoveAt(i);
                 break;
@@ -55,7 +55,10 @@ public class CollectionControl : MonoBehaviour
 
     private void MoveWithController()
     {
-        selectedObject.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed, 0);
+        if (selectedObject != null)
+        {
+            selectedObject.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed, 0);
+        }
     }
 
     void SelectItemWithController()
@@ -79,7 +82,10 @@ public class CollectionControl : MonoBehaviour
                 item.GetComponentInChildren<SpriteRenderer>().sprite = item.GetComponent<KennelItemScript>().normalSprite;
             }
 
-            selectedObject.GetComponentInChildren<SpriteRenderer>().sprite = selectedObject.GetComponent<KennelItemScript>().HighlightedSprite;
+            if (selectedObject != null)
+            {
+                selectedObject.GetComponentInChildren<SpriteRenderer>().sprite = selectedObject.GetComponent<KennelItemScript>().HighlightedSprite;
+            }
 
             cooldown = 0.2f;
         }
