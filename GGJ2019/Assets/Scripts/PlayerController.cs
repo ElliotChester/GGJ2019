@@ -369,6 +369,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public GameObject fadeOut;
+
     private void OnTriggerEnter(Collider other)
     {                                                                                                                      
         if(other.tag == "DarkZone")                                                                                        
@@ -377,6 +379,11 @@ public class PlayerController : MonoBehaviour
             {                                                                     
                 anim.SetBool("Scared", true);
             }
+        }
+
+        if (other.tag == "End")
+        {
+            fadeOut.GetComponent<Animator>().SetTrigger("End");
         }
     }
 }

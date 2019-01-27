@@ -15,6 +15,12 @@ public class FadeOutPanel : MonoBehaviour
         
     }
 
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+
     public void OpenMainScene()
     {
         SceneManager.LoadScene(1);

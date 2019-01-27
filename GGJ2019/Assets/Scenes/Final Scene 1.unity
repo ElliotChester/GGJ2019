@@ -849,6 +849,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &116184471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7970519707136394382, guid: a332143ad81557b4fb783ad33afea088,
+    type: 3}
+  m_PrefabInstance: {fileID: 3938435812899662763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &116184472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116184471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca41db2b3d80ae4c801751e6ac61e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &123069522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22447,6 +22465,11 @@ PrefabInstance:
     - target: {fileID: 1138166465425150681, guid: a332143ad81557b4fb783ad33afea088,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333548783840112453, guid: a332143ad81557b4fb783ad33afea088,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
