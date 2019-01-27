@@ -7,6 +7,7 @@ TagManager:
   - DarkZone
   - Parachute
   - Draggable Item
+  - Lamp
   layers:
   - Default
   - TransparentFX
