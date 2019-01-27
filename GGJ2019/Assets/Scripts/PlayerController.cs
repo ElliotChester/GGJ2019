@@ -77,13 +77,27 @@ public class PlayerController : MonoBehaviour
                 if (!InteractText.enabled)
                 {
                     EnterKennelText.enabled = true;
-                    EnterKennelText.text = "Enter Kennel: Q";
+                    if(Input.GetJoystickNames().Length != 0)
+                    {
+                        EnterKennelText.text = "Enter Kennel: B";
+                    }
+                    else
+                    {
+                        EnterKennelText.text = "Enter Kennel: Q";
+                    }
                 }
 
                 if (!PickupKennelText.enabled)
                 {
                     PickupKennelText.enabled = true;
-                    PickupKennelText.text = "Drop Kennel: F";
+                    if (Input.GetJoystickNames().Length != 0)
+                    {
+                        PickupKennelText.text = "Drop Kennel: Y";
+                    }
+                    else
+                    {
+                        PickupKennelText.text = "Drop Kennel: F";
+                    }
                 }
 
                 CarryKennel();
@@ -104,13 +118,27 @@ public class PlayerController : MonoBehaviour
                     if (!EnterKennelText.enabled)
                     {
                         EnterKennelText.enabled = true;
-                        EnterKennelText.text = "Enter Kennel: Q";
+                        if (Input.GetJoystickNames().Length != 0)
+                        {
+                            EnterKennelText.text = "Enter Kennel: B";
+                        }
+                        else
+                        {
+                            EnterKennelText.text = "Enter Kennel: Q";
+                        }
                     }
 
                     if (!PickupKennelText.enabled)
                     {
                         PickupKennelText.enabled = true;
-                        PickupKennelText.text = "Pickup Kennel: F";
+                        if (Input.GetJoystickNames().Length != 0)
+                        {
+                            PickupKennelText.text = "Pickup Kennel: Y";
+                        }
+                        else
+                        {
+                            PickupKennelText.text = "Pickup Kennel: F";
+                        }
                     }
 
                     if (Input.GetButtonDown("EnterKennel"))
@@ -134,7 +162,14 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(this.transform.position, item.transform.position) < 2)
             {
                 InteractText.enabled = true;
-                InteractText.text = "Pickup " + item.name + ": E";
+                if (Input.GetJoystickNames().Length != 0)
+                {
+                    InteractText.text = "Pickup " + item.name + ": X";
+                }
+                else
+                {
+                    InteractText.text = "Pickup " + item.name + ": E";
+                }
 
                 if (Input.GetButtonDown("Interact"))
                 {
@@ -151,7 +186,15 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(this.transform.position, item.transform.position) < 2)
             {
                 InteractText.enabled = true;
-                InteractText.text = "Pickup " + item.name + ": E";
+
+                if (Input.GetJoystickNames().Length != 0)
+                {
+                    InteractText.text = "Pickup " + item.name + ": X";
+                }
+                else
+                {
+                    InteractText.text = "Pickup " + item.name + ": E";
+                }
 
                 if (Input.GetButtonDown("Interact"))
                 {
@@ -237,11 +280,11 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.transform.position, Vector3.right * transform.localScale.x, out hit, 2f))
         {
-            Kennel.transform.position += Vector3.right * 1.1f * -transform.localScale.x;
+            Kennel.transform.position += Vector3.left * 1.1f * transform.localScale.x;
         }
         else
         {
-            this.transform.position += Vector3.left * 1.1f * -transform.localScale.x;
+            this.transform.position += Vector3.right * 1.1f * transform.localScale.x;
         }
 
 

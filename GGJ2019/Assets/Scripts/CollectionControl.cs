@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CollectionControl : MonoBehaviour
 {
-    GameObject selectedObject;
-    int selectedObjectint = 0;
+    public GameObject selectedObject;
+    public int selectedObjectint = 0;
 
     float cooldown;
 
@@ -18,6 +18,8 @@ public class CollectionControl : MonoBehaviour
 
     public Vector3 lastSpawnPos;
 
+    bool released = true;
+
     void Start()
     {
         sortOrder = selectableObjects;
@@ -25,7 +27,7 @@ public class CollectionControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.GetAxisRaw("DPADHorizontal"));
+        //Debug.Log(Input.GetAxisRaw("DPADHorizontal"));
 
         SelectItemWithController();
 
@@ -63,18 +65,28 @@ public class CollectionControl : MonoBehaviour
 
     void SelectItemWithController()
     {
-        if (cooldown <= 0)
+        Debug.Log("Getting Here " + Input.GetAxisRaw("DPADHorizontal"));
+        if (released)
         {
             if (Input.GetAxisRaw("DPADHorizontal") < -0.5f)
             {
+                Debug.Log("DOWN");
                 selectedObjectint--;
                 if (selectedObjectint < 0) { selectedObjectint = selectableObjects.Count - 1; }
-            }
-
+                selectedObject = selectableObjects[selectedObjectint];
+                released = false;
+            }else
             if (Input.GetAxisRaw("DPADHorizontal") > 0.5f)
             {
+                Debug.Log("UP");
                 selectedObjectint++;
                 if (selectedObjectint >= selectableObjects.Count) { selectedObjectint = 0; }
+                selectedObject = selectableObjects[selectedObjectint];
+                released = false;
+            }
+            else
+            {
+                return;
             }
 
             foreach (var item in selectableObjects)
@@ -87,11 +99,14 @@ public class CollectionControl : MonoBehaviour
                 selectedObject.GetComponentInChildren<SpriteRenderer>().sprite = selectedObject.GetComponent<KennelItemScript>().HighlightedSprite;
             }
 
-            cooldown = 0.2f;
+            
         }
         else
         {
-            cooldown -= Time.deltaTime;
+            if (Input.GetAxisRaw("DPADHorizontal") == 0)
+            {
+                released = true;
+            }
         }
     }
 }

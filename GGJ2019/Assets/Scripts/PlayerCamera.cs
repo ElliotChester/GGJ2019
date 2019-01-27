@@ -34,11 +34,11 @@ public class PlayerCamera : MonoBehaviour
             newVelocity.x = Mathf.Lerp(newVelocity.x, 0, cameraAcceleration * Time.deltaTime);
         }
 
-        if (Camera.main.WorldToScreenPoint(this.transform.position).y > Screen.height * 0.7f)
+        if (Camera.main.WorldToScreenPoint(this.transform.position).y > Screen.height * 0.6f)
         {
             newVelocity.z = Mathf.Lerp(newVelocity.z, 1 * cameraSpeed, cameraAcceleration * Time.deltaTime);
         }
-        else if (Camera.main.WorldToScreenPoint(this.transform.position).y < Screen.height * 0.3f)
+        else if (Camera.main.WorldToScreenPoint(this.transform.position).y < Screen.height * 0.4f)
         {
             newVelocity.z = Mathf.Lerp(newVelocity.z, -1 * cameraSpeed, cameraAcceleration * Time.deltaTime);
         }
