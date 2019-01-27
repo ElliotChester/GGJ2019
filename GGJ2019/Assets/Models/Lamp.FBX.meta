@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: db80c4022059b3346ae67da8c1a09e7d
+guid: 282eb1b92fb0b5149bb3b1205401a547
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: 03 - Default
-    2100004: 02 - Default
-    2100006: 07 - Default
+    2100000: 02 - Default
+    2100002: 07 - Default
+    2100004: 03 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tunnel
+    4300000: Cylinder001
   externalObjects: {}
   materials:
     importMaterials: 1
