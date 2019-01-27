@@ -315,7 +315,7 @@ public class PlayerController : MonoBehaviour
         Kennel.transform.eulerAngles = new Vector3(Kennel.transform.eulerAngles.x, Kennel.transform.eulerAngles.y, 0);
     }
 
-    void PickupKennel()
+    public void PickupKennel()
     {
         carryingKennel = true;
         Kennel.GetComponent<BoxCollider>().enabled = false;

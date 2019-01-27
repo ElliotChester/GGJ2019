@@ -20,6 +20,7 @@ public class RetrievalBox : MonoBehaviour
 
     public void Retrieve()
     {
-        Kennel.transform.position = this.transform.position + Vector3.back + Vector3.up / 2;
+		PlayerController.instance.PickupKennel();
+        //Kennel.transform.position = this.transform.position + Vector3.back + Vector3.up * 2;
     }
 }
