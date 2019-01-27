@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RB = this.GetComponent<Rigidbody>();
         Anim = this.GetComponent<Animator>();
+        RB.velocity = Vector3.left;
     }
 
     void LateUpdate()
@@ -60,8 +61,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayerController.instance.Kennel.transform.localScale = new Vector3(1, 1, 1);
             }
-        }
-        else
+        }else
+        if (RB.velocity.x > 0)
         {
             this.transform.localScale = new Vector3(1, 1, 1);
 

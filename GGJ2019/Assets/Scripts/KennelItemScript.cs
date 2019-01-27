@@ -29,6 +29,16 @@ public class KennelItemScript : MonoBehaviour
         if (CheckForMouseOver() && Input.GetButtonDown("Fire1"))
         {
             beingHeld = true;
+            foreach (Transform item in this.transform.parent)
+            {
+                if (item.tag == "Draggable Item")
+                {
+                    Debug.Log("settingg sorting order");
+                    item.GetComponentInChildren<SpriteRenderer>().sortingOrder = 1;
+                }
+            }
+
+            this.GetComponentInChildren<SpriteRenderer>().sortingOrder = 2;
         }
 
     }

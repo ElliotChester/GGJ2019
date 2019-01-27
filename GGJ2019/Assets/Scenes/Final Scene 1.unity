@@ -1042,6 +1042,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 2ef7b4122df16724eaeabec4f06f9b43,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
+      objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 2ef7b4122df16724eaeabec4f06f9b43,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1465,6 +1470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ball2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 772a95ece544ec54088094af2f8c2475,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
       objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 772a95ece544ec54088094af2f8c2475,
         type: 3}
@@ -2022,6 +2032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treats
       objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 03addc5074df4c24fb2453dfe7a8c34c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
+      objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 03addc5074df4c24fb2453dfe7a8c34c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2453,6 +2468,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doormat
       objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 76d4d57d1d9e70b44bf9848b864183ae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
+      objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 76d4d57d1d9e70b44bf9848b864183ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2626,6 +2646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: dcb2e3470159f5b4390c9319a9f7a299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
       objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: dcb2e3470159f5b4390c9319a9f7a299,
         type: 3}
@@ -5487,6 +5512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teddy
       objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 2664915a9270b40428b3331a3af4aa8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
+      objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 2664915a9270b40428b3331a3af4aa8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5795,6 +5825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower
       objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: dcab2e707628dee45853219e8c696dcd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
+      objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: dcab2e707628dee45853219e8c696dcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6049,6 +6084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 5542e1790b6ba1344b2d0230032ccd53,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
       objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 5542e1790b6ba1344b2d0230032ccd53,
         type: 3}
@@ -9263,6 +9303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: 2e365ed18ba44594c8144b795a600d27,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
       objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: 2e365ed18ba44594c8144b795a600d27,
         type: 3}
@@ -20965,6 +21010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352690223634621522, guid: e671fe2fb3fb18143954d9b1532bd973,
+        type: 3}
+      propertyPath: m_TagString
+      value: Draggable Item
       objectReference: {fileID: 0}
     - target: {fileID: 8352690223634621523, guid: e671fe2fb3fb18143954d9b1532bd973,
         type: 3}

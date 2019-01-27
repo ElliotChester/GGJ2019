@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DarkZone
   - Parachute
+  - Draggable Item
   layers:
   - Default
   - TransparentFX
