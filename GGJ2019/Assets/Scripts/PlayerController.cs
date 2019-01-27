@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
     private void PickupItem(GameObject item)
     {
         Instantiate(item.GetComponent<WorldItemScript>().UIAlternative, kennelUI.transform.position, Quaternion.identity, kennelUI.transform);
+        kennelUI.GetComponent<ControllerMovement>().selectableObjects.Add(item);
         Destroy(item);
         Interactables.Remove(item);
     }
