@@ -86,7 +86,10 @@ public class PlayerController : MonoBehaviour
             {
                 if (KennelIsClose())
                 {
-                    KennelText.enabled = true;
+                    if (!InteractText.enabled)
+                    {
+                        KennelText.enabled = true;
+                    }
                     if (Input.GetButtonDown("EnterKennel"))
                     {
                         EnterKennel();
