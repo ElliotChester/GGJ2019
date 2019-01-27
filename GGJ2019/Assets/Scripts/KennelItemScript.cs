@@ -34,11 +34,9 @@ public class KennelItemScript : MonoBehaviour
                 if (item.tag == "Draggable Item")
                 {
                     Debug.Log("settingg sorting order");
-                    item.GetComponentInChildren<SpriteRenderer>().sortingOrder = 1;
+                    this.GetComponentInParent<CollectionControl>().MoveToTop(this.gameObject);
                 }
             }
-
-            this.GetComponentInChildren<SpriteRenderer>().sortingOrder = 2;
         }
 
     }
