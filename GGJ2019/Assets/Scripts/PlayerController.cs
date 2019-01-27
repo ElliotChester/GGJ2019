@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public Text InteractText;
     public Text EnterKennelText;
     public Text PickupKennelText;
+    public Text HelpText;
 
     public bool hasParachute;
 
@@ -331,6 +332,8 @@ public class PlayerController : MonoBehaviour
         if (item.tag == "Parachute")
         {
             hasParachute = true;
+            HelpText.text = "You can now hold jump to glide down to the ground with your kennel";
+            HelpText.GetComponent<Animator>().SetTrigger("Show");
         }
 
         if (item.tag == "Lamp")
@@ -341,7 +344,11 @@ public class PlayerController : MonoBehaviour
             {
                 darkzone.GetComponent<BoxCollider>().isTrigger = true;
             }
+            HelpText.text = "You can now enter dark places with your kennel";
+            HelpText.GetComponent<Animator>().SetTrigger("Show");
         }
+
+        
                                                                                                                            
         Attachables.Remove(item);
     }
