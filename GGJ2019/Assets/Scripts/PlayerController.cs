@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
         Kennel.GetComponentInChildren<SpriteRenderer>().sortingOrder = this.GetComponentInChildren<SpriteRenderer>().sortingOrder;
 
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, Vector3.right, out hit, 2f))
+        if (Physics.Raycast(this.transform.position, Vector3.right * transform.localScale.x, out hit, 2f))
         {
             Kennel.transform.position += Vector3.right * 1.1f * -transform.localScale.x;
         }
