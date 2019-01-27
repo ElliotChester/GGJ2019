@@ -8,6 +8,7 @@ TagManager:
   - Parachute
   - Draggable Item
   - Lamp
+  - End
   layers:
   - Default
   - TransparentFX

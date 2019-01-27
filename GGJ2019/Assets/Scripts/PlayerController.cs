@@ -383,6 +383,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.tag == "End")
         {
+			Debug.Log("Boop");
             fadeOut.GetComponent<Animator>().SetTrigger("End");
         }
     }
